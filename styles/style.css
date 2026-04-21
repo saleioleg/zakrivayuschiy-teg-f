@@ -13,4 +13,239 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: "wght" var(--main-text-weight);
+  background-image:
+    var(--horizontal-gradient), var(--vertical-gradient),
+    var(--gradient-transition);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 100px 0;
+}
+
+.container {
+  width: var(--block-size);
+  margin: 0 auto;
+}
+
+.main {
+  display: grid;
+  gap: 52px;
+  margin-bottom: 52px;
+}
+
+/* ШАПКА */
+
+.header {
+  display: grid;
+  gap: 30px;
+  padding: clamp(122px, 14vw, 130px) clamp(16px, 4vw, 122px);
+  margin-bottom: 100px;
+  background-color: #fff;
+  text-align: center;
+  border: 2px solid #000;
+}
+
+.header__title-main {
+  font-family: var(--accent-font);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.header__title-secondary {
+  font-family: var(--accent-font);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* КАРТОЧКИ */
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.card__title {
+  padding: 4px 10px;
+  grid-column: 1 / 4;
+  font-variation-settings: "wght" var(--main-title-weight);
+  font-size: var(--main-font-size);
+}
+
+.card__image-container {
+  position: relative;
+  grid-column: 1 / 4;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+@supports ((text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff)) {
+  .card__image-label {
+    -webkit-text-stroke: 1px #ffffff;
+    text-stroke: 1px #ffffff;
+    text-shadow: none;
+  }
+}
+
+.card__image-label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  z-index: 1;
+  mix-blend-mode: hard-light;
+  text-shadow: 0 0 0 #ffffff;
+}
+
+.card__description {
+  display: grid;
+  gap: 25px;
+  padding: 25px;
+  grid-column: 1 / 4;
+  font-size: var(--main-font-size);
+}
+
+.card__description-text {
+  grid-column: 1 / 4;
+}
+
+.card__buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 169px;
+  height: 38px;
+  grid-column: 3;
+}
+
+.card__icon-button {
+  width: 27px;
+  height: 24px;
+  align-self: center;
+  background-color: transparent;
+  border: none;
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  font-family: var(--accent-font);
+  background-color: transparent;
+  border: 2px solid #000;
+}
+
+/* ПОДВАЛ */
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* padding: 0 35px; */
+}
+
+.footer__button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  grid-column: 2;
+  gap: 8px;
+  min-width: 339px;
+  padding: 17px 20px;
+  background-color: #fff;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  font-size: var(--button-font-size);
+}
+
+/* ДИАЛОГОВОЕ ОКНО */
+
+.dialog {
+  max-width: 353px;
+  padding: 30px;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0 0 0 / 0.75);
+}
+
+.dialog__container {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.dialog__information {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dialog__icon {
+  flex-shrink: 0;
+}
+
+.dialog__text {
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.dialog__button {
+  padding: 12px 0;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 2px solid #000;
+}
+
+/* ФИЛЬТРЫ */
+
+.card__filter-grayscale {
+  filter: grayscale(0.7) contrast(0.8);
+}
+
+.card__filter-saturate {
+  filter: saturate(3);
+}
+
+.card__filter-hue-rotate {
+  filter: hue-rotate(30deg);
+}
+
+.card__filter-invert {
+  filter: invert(1) contrast(0.5);
+}
+
+.card__filter-sepia {
+  filter: sepia(0.9);
+}
+
+.card__filter-blur {
+  filter: blur(15px);
+}
+
+.card__filter-combine {
+  filter: blur(3px) hue-rotate(95deg) contrast(0.5);
+}
+
+/* АДАПТИВ */
+
+@media (width <= 375px) {
+  .footer__button {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__icon {
+    width: 28px;
+    height: 28px;
+  }
 }

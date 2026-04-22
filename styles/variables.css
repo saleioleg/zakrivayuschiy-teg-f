@@ -2,7 +2,7 @@
 
 :root {
   --main-font: "Inter-Variable";
-  --accent-font: "PressStart2P-Regular";
+  --accent-font: "PressStart2P";
   --main-text-weight: 410;
   --main-title-weight: 715;
   --main-font-size: 18px;
@@ -11,17 +11,17 @@
   --heart-contour: #000;
   --animation-fill-color: #ff0000;
   --horizontal-gradient: repeating-linear-gradient(
-    to right,
-    #d3d3d3 2px,
-    transparent 2px
+    90deg,
+    #d3d3d3 0 2px,
+    rgb(0 0 0 / 0) 2px 4px
   );
   --vertical-gradient: repeating-linear-gradient(
-    to bottom,
-    #d3d3d3 2px,
-    transparent 2px
+    180deg,
+    #d3d3d3 0 2px,
+    rgb(0 0 0 / 0) 2px 4px
   );
   --gradient-transition: linear-gradient(
-    to bottom,
+    180deg ,
     #e7e7e7 0%,
     #e7e7e7 0.01%,
     #1a1a1a 100%

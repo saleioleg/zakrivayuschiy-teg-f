@@ -31,7 +31,6 @@
 .main {
   display: grid;
   gap: 53px;
-  margin-bottom: 52px;
 }
 
 .button {
@@ -57,14 +56,14 @@
 }
 
 .header__title-main {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-transform: uppercase;
   font-weight: 400;
 }
 
 .header__title-secondary {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
   font-weight: 400;
@@ -93,25 +92,27 @@
   border-bottom: 2px solid #000;
 }
 
+.card__image-label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  z-index: 1;
+  mix-blend-mode: hard-light;
+  text-shadow:
+    0 0 1px #ffffff,
+    0 0 2px #ffffff;
+}
+
 @supports ((text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff)) {
   .card__image-label {
     -webkit-text-stroke: 1px #ffffff;
     text-stroke: 1px #ffffff;
     text-shadow: none;
   }
-}
-
-.card__image-label {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  font-family: var(--accent-font);
-  font-size: 14px;
-  text-transform: uppercase;
-  opacity: 0.5;
-  z-index: 1;
-  mix-blend-mode: hard-light;
-  text-shadow: 0 0 0 #ffffff;
 }
 
 .card__description {
@@ -131,12 +132,15 @@
   grid-template-columns: 1fr 1fr;
   grid-column: 3;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .card__icon-button {
-  width: 38px;
-  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 39px;
+  height: 36px;
   justify-self: end;
   background-color: transparent;
   border: 2px solid transparent;
@@ -147,40 +151,38 @@
 .card__like-button {
   width: 130px;
   height: 38px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
 }
 
-/* ПОДВАЛ */
-
-.footer {
+.section__save {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
 }
 
-.footer__button {
+.section__save-button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  grid-column: 2;
   gap: 8px;
   min-width: 339px;
   padding: 17px 20px;
 }
 
-.footer__icon {
+.section__save-icon {
   color: #000;
 }
 
 .button__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   font-size: var(--button-font-size);
 }
 
 /* ДИАЛОГОВОЕ ОКНО */
 
-.dialog {
+.dialog[open] {
   max-width: 353px;
   padding: 30px;
+  border: 2px solid #000;
 }
 
 .dialog::backdrop {
@@ -204,7 +206,7 @@
 }
 
 .dialog__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   text-transform: uppercase;
   line-height: 1.5;
 }
@@ -286,7 +288,7 @@
   border-color: #000;
 }
 
-.button .footer__icon {
+.button .section__save-icon {
   color: currentColor;
   mix-blend-mode: difference;
 }
@@ -365,18 +367,17 @@
 @media (width <= 375px) {
   .main {
     gap: 52px;
-    margin-bottom: 49px;
   }
 
   .card__description {
     padding-top: 16px;
   }
 
-  .footer__button {
+  .section__save-button {
     min-width: 306px;
     flex-direction: column;
     align-items: center;
-    padding-right: 18px;
-    padding-left: 18px;
+    padding: 16px 18px;
+    gap: 12px;
   }
 }

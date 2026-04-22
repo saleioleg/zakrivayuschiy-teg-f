@@ -286,7 +286,7 @@
   border-color: #000;
 }
 
-.footer__icon {
+.button .footer__icon {
   color: currentColor;
   mix-blend-mode: difference;
 }
@@ -378,10 +378,5 @@
     align-items: center;
     padding-right: 18px;
     padding-left: 18px;
-  }
-
-  .footer__icon {
-    width: 28px;
-    height: 28px;
   }
 }

@@ -7,6 +7,9 @@
   --main-title-weight: 715;
   --main-font-size: 18px;
   --button-font-size: 14px;
+  --text-color: #fff;
+  --heart-contour: #000;
+  --animation-fill-color: #ff0000;
   --horizontal-gradient: repeating-linear-gradient(
     to right,
     #d3d3d3 2px,

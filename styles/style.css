@@ -49,7 +49,7 @@
   display: grid;
   gap: 18px;
   padding: clamp(122px, 14vw, 130px) clamp(16px, 4vw, 122px);
-  margin-bottom: 100px;
+  margin-bottom: 97px;
   background-color: #fff;
   text-align: center;
   border: 2px solid #000;
@@ -87,6 +87,8 @@
 
 .card__image-container {
   position: relative;
+  max-height: 700px;
+  max-width: 696px;
   grid-column: 1 / 4;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
@@ -118,12 +120,13 @@
 .card__description {
   display: grid;
   gap: 25px;
-  padding: 11px 25px 25px;
+  padding: 25px;
   grid-column: 1 / 4;
   font-size: var(--main-font-size);
 }
 
 .card__description-text {
+  line-height: 1.15;
   grid-column: 1 / 4;
 }
 
@@ -165,7 +168,7 @@
   align-items: center;
   gap: 8px;
   min-width: 339px;
-  padding: 17px 20px;
+  padding: 13px 20px;
 }
 
 .section__save-icon {
@@ -180,19 +183,19 @@
 /* ДИАЛОГОВОЕ ОКНО */
 
 .dialog[open] {
+  display: flex;
   max-width: 353px;
-  padding: 30px;
+  max-height: 191px;
+  padding: 31px 27px 28px;
   border: 2px solid #000;
+  background-color: transparent;
+  flex-direction: column;
+  gap: 26px;
+  opacity: 0.5;
 }
 
 .dialog::backdrop {
   background-color: rgba(0 0 0 / 0.75);
-}
-
-.dialog__container {
-  display: flex;
-  flex-direction: column;
-  gap: 23px;
 }
 
 .dialog__information {
@@ -207,12 +210,13 @@
 
 .dialog__text {
   font-family: var(--accent-font), sans-serif;
+  font-size: var(--button-font-size);
   text-transform: uppercase;
   line-height: 1.5;
 }
 
 .dialog__button {
-  padding: 12px 0;
+  padding: 8px 0;
   text-transform: uppercase;
 }
 
@@ -366,18 +370,28 @@
 
 @media (width <= 375px) {
   .main {
-    gap: 52px;
+    gap: 50px;
   }
 
-  .card__description {
-    padding-top: 16px;
+  .card__image-container {
+    max-height: 380px;
   }
 
   .section__save-button {
     min-width: 306px;
     flex-direction: column;
     align-items: center;
-    padding: 16px 18px;
+    padding: 12px 18px;
     gap: 12px;
+  }
+
+  .section__save-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dialog[open] {
+    max-width: 341px;
+    padding: 27px 38px;
   }
 }

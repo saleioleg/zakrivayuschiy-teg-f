@@ -572,51 +572,49 @@
 
       <section class="section section__save container">
         <button
-        type="button"
-        onclick="window['modal'].showModal()"
-        aria-controls="modal"
-        class="section__save-button button"
-      >
-        <svg
-          width="21"
-          height="21"
-          viewBox="0 0 21 21"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="section__save-icon"
+          type="button"
+          onclick="window['modal'].showModal()"
+          aria-controls="modal"
+          class="section__save-button button"
         >
-          <use href="./svg/diskette.svg#diskette-icon"></use>
-        </svg>
-        <span class="button__text">Сохранить на память</span>
-      </button>
+          <svg
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="section__save-icon"
+          >
+            <use href="./svg/diskette.svg#diskette-icon"></use>
+          </svg>
+          <span class="button__text">Сохранить на память</span>
+        </button>
       </section>
     </main>
 
     <dialog class="dialog" id="modal">
-      <div class="dialog__container">
-        <div class="dialog__information">
-          <svg
-            width="39"
-            height="39"
-            viewBox="0 0 39 39"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="dialog__icon"
-          >
-            <use href="./svg/diskette-modal.svg#diskette-modal-icon"></use>
-          </svg>
-
-          <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
-        </div>
-
-        <button
-          type="button"
-          onclick="window['modal'].close()"
-          class="dialog__button button"
+      <div class="dialog__information">
+        <svg
+          width="39"
+          height="39"
+          viewBox="0 0 39 39"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="dialog__icon"
         >
-          <span class="button__text">ок</span>
-        </button>
+          <use href="./svg/diskette-modal.svg#diskette-modal-icon"></use>
+        </svg>
+
+        <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
       </div>
+
+      <button
+        type="button"
+        onclick="window['modal'].close()"
+        class="dialog__button button"
+      >
+        <span class="button__text">ок</span>
+      </button>
     </dialog>
 
     <script src="./scripts/like.js"></script>

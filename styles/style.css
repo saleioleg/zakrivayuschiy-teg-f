@@ -185,13 +185,11 @@
 .dialog[open] {
   display: flex;
   max-width: 353px;
-  max-height: 191px;
-  padding: 31px 27px 28px;
+  padding: 29px 27px 26px;
   border: 2px solid #000;
-  background-color: transparent;
+  background-color: #fff;
   flex-direction: column;
   gap: 26px;
-  opacity: 0.5;
 }
 
 .dialog::backdrop {
@@ -392,6 +390,7 @@
 
   .dialog[open] {
     max-width: 341px;
-    padding: 27px 38px;
+    padding: 26px 38px 28px;
+    gap: 28px;
   }
 }
